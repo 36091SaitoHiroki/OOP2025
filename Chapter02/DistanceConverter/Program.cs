@@ -1,4 +1,5 @@
-﻿using System.Xml.Schema;
+﻿using System.Diagnostics.Metrics;
+using System.Xml.Schema;
 
 namespace DistanceConverter {
     internal class Program {
@@ -14,30 +15,23 @@ namespace DistanceConverter {
                 PrintMeterToFeetList(start, end);
             }
 
+            //フィートからメートルへの対応表を出力
             static void PrintFeetToMeterList(int start, int end) {
-                //フィートからメートルへの対応表を出力
+                FeetConverter converter = new FeetConverter();
                 for (int feet = start; feet <= end; feet++) {
-                    //   double meter = feet * 0.3048;
-                    double meter = FeetToMeter(feet);
+                    double meter = converter.ToMeter(feet);
                     Console.WriteLine($"{feet}ft = {meter:0.0000}m");
                 }
             }
 
+            //メートルからフィートへの対応表を出力
             static void PrintMeterToFeetList(int start, int end) {
-                //メートルからフィートへの対応表を出力
+                FeetConverter converter = new FeetConverter();
                 for (int meter = start; meter <= end; meter++) {
-                    double feet = MeterToFeet(meter);
+                    double feet = converter.FromMeter(meter);
                     Console.WriteLine($"{meter}ft = {feet:0.0000}ft");
                 }
             }
-        }
-
-        static double FeetToMeter(int feet) {
-            return feet * 0.3048;
-        }
-
-        static double MeterToFeet(int meter) {
-            return meter / 0.3048;
         }
     }
 }
