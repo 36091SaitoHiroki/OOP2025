@@ -17,7 +17,7 @@
 
                 //endが入力されたら終了
                 if (title.Equals("end", StringComparison.OrdinalIgnoreCase))
-                    return;
+                    break;
 
                 //アーティスト出力
                 Console.Write("アーティスト名：");
