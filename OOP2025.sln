@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "売り上げ集計プログ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesCalculator", "Chapter02\SslesCalculator\SalesCalculator.csproj", "{17A89C66-7998-4AD1-A506-C7EFE0CE4AE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise01", "Chapter02\演習問題\Exercise01\Exercise01.csproj", "{697FEC80-DE5F-F167-2E9C-702E7D330C53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{17A89C66-7998-4AD1-A506-C7EFE0CE4AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17A89C66-7998-4AD1-A506-C7EFE0CE4AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17A89C66-7998-4AD1-A506-C7EFE0CE4AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{697FEC80-DE5F-F167-2E9C-702E7D330C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{697FEC80-DE5F-F167-2E9C-702E7D330C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{697FEC80-DE5F-F167-2E9C-702E7D330C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{697FEC80-DE5F-F167-2E9C-702E7D330C53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{B964E54C-32A7-47B6-82EB-DF0DAD338127} = {15893D59-87F3-4173-A21A-446B21F9F542}
 		{0922088E-A7FE-406B-9AE3-AFE0C469135F} = {1607FF0C-7744-468F-B255-91FA0E716DB2}
 		{17A89C66-7998-4AD1-A506-C7EFE0CE4AE6} = {0922088E-A7FE-406B-9AE3-AFE0C469135F}
+		{697FEC80-DE5F-F167-2E9C-702E7D330C53} = {85FBF1B9-A406-4678-9688-1C4C96C11B84}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2DA1D154-3454-413C-A2A1-9919FFF561C9}
