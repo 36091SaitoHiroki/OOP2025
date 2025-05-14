@@ -5,9 +5,10 @@ namespace Section01 {
         static void Main(string[] args) {
 
             Console.Write("カウントしたい数値：");
-            Console.ReadLine();
+            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine(Count(num));
 
-            Count
+
         }
         static int Count(int num) {
             var numbers = new[] { 5, 3, 9, 6, 7, 5, 8, 1, 0, 5, 10, 4 };
