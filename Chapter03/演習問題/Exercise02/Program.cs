@@ -1,4 +1,5 @@
 ﻿
+
 namespace Exercise02 {
     internal class Program {
         static void Main(string[] args) {
@@ -34,11 +35,10 @@ namespace Exercise02 {
                 int index = names.FindIndex(s => s == name);
                 Console.WriteLine(index);
             } while (true);
-
         }
 
         private static void Exercise2_2(List<string> names) {
-
+            Console.WriteLine(names.Count(s => s.Contains('o')));
         }
 
         private static void Exercise2_3(List<string> names) {
