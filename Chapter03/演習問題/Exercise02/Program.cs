@@ -23,30 +23,31 @@ namespace Exercise02 {
             Console.WriteLine("***** 3.2.4 *****");
             Exercise2_4(cities);
             Console.WriteLine();
-
         }
 
         private static void Exercise2_1(List<string> names) {
-            Console.WriteLine("都市名と入力。空行で終了");
+            Console.WriteLine("都市名を入力。空行で終了");
             do {
-                var name = Console.ReadLine();
-                if (string.IsNullOrEmpty(name))
+                var name = Console.ReadLine();  //入力処理
+                if (string.IsNullOrEmpty(name)) 
                     break;
-                int index = names.FindIndex(s => s == name);
+                int index = names.FindIndex(s => s.Equals(name));
                 Console.WriteLine(index);
             } while (true);
         }
 
         private static void Exercise2_2(List<string> names) {
-            Console.WriteLine(names.Count(s => s.Contains('o')));
+        
+            //ヒント
+           // names.Count( ここにラムダ式を記述する )
         }
 
         private static void Exercise2_3(List<string> names) {
-
+        
         }
 
         private static void Exercise2_4(List<string> names) {
-
+        
         }
     }
 }
