@@ -47,6 +47,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "演習問題", "演習問�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise02", "\\172.16.42.1\学生\2024_情報システム\オブジェクト指向プログラミングⅠ\前回休んだ人\Chapter03\演習問題\Exercise02\Exercise02.csproj", "{43782E45-CEDB-2C9D-3C85-2E5DAB9E8549}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise02", "\\172.16.42.1\学生\2024_情報システム\オブジェクト指向プログラミングⅠ\前回休んだ人\Chapter04\演習問題\Exercise02\Exercise02.csproj", "{2A3DB665-792A-EF1C-FE4D-1D7C7D679BB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{43782E45-CEDB-2C9D-3C85-2E5DAB9E8549}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43782E45-CEDB-2C9D-3C85-2E5DAB9E8549}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43782E45-CEDB-2C9D-3C85-2E5DAB9E8549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A3DB665-792A-EF1C-FE4D-1D7C7D679BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A3DB665-792A-EF1C-FE4D-1D7C7D679BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A3DB665-792A-EF1C-FE4D-1D7C7D679BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A3DB665-792A-EF1C-FE4D-1D7C7D679BB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +129,7 @@ Global
 		{94DD345E-7CED-4741-C3E7-505B445CE161} = {2167973D-DF2B-435E-8428-5F5F6BA98CE6}
 		{D902C94D-7BC0-4CA8-B150-B4EF951E9925} = {75BD9E9E-512D-4035-9925-C81D27E947CE}
 		{43782E45-CEDB-2C9D-3C85-2E5DAB9E8549} = {D902C94D-7BC0-4CA8-B150-B4EF951E9925}
+		{2A3DB665-792A-EF1C-FE4D-1D7C7D679BB4} = {2167973D-DF2B-435E-8428-5F5F6BA98CE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2DA1D154-3454-413C-A2A1-9919FFF561C9}
