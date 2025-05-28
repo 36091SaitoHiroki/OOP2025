@@ -1,4 +1,6 @@
 ﻿
+using System.Reflection;
+
 namespace Exercise02 {
     internal class Program {
         static void Main(string[] args) {
@@ -38,13 +40,14 @@ namespace Exercise02 {
         }
 
         private static void Exercise1(List<Book> books) {
-            var titles = books.Where(x => x.Title.Contains("ワンダフル・C#ライフ"));
-            foreach (var item in titles) {
-                Console.WriteLine(item.Price + "," + item.Pages);
-            }
+            var book = books.FirstOrDefault(x => x.Title.Contains("ワンダフル・C#ライフ"));
+            if (book is not null)
+                Console.WriteLine("{0} {1}", book.Price, book.Pages);
         }
 
         private static void Exercise2(List<Book> books) {
+            var count = books.Count(x => x.Title.Contains("C#"));
+            Console.WriteLine(count + "冊");
             
         }
 
