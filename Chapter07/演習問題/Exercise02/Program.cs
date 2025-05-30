@@ -50,7 +50,7 @@ namespace Exercise02 {
             var count = books
                 .Count(x => x.Title.Contains("C#"));
             Console.WriteLine(count + "冊");
-            
+
         }
 
         private static void Exercise3(List<Book> books) {
@@ -66,7 +66,7 @@ namespace Exercise02 {
             if (book is not null) {
                 Console.WriteLine(book.Title);
             }
-            
+
         }
 
         private static void Exercise5(List<Book> books) {
