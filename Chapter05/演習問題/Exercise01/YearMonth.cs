@@ -16,7 +16,7 @@ namespace Exercise01 {
             Month = month;
         }
 
-        public bool Is21Century =>(Year >= 2001 && Year <= 2100);
+        public bool Is21Century => 2001 <= Year && Year <= 2100;
 
 
 
