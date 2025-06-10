@@ -1,4 +1,5 @@
 ﻿using Exercise01;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Exercise02 {
     public class Program {
@@ -24,16 +25,21 @@ namespace Exercise02 {
         }
 
         private static void Exercise2(YearMonth[] ymCollection) {
-            foreach (var YearMonth in ymCollection) {
-                Console.WriteLine(YearMonth);
+            foreach (var ym in ymCollection) {
+                Console.WriteLine(ym);
             }
         }
 
-        
+        private static YearMonth? FindFirst21C(YearMonth[] ymCollection) {
+            foreach (var ym in ymCollection) {
+                if (ym.Is21Century) 
+                    return ym;
+            }
+            return null;
+        }
 
         private static void Exercise4(YearMonth[] ymCollection) {
             
-        }
 
         private static void Exercise5(YearMonth[] ymCollection) {
             
