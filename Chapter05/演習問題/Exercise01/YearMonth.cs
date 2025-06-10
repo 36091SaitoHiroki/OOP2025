@@ -25,7 +25,8 @@ namespace Exercise01 {
                 return new YearMonth(Year + 1,1);
             }
         }
-
+        public override string ToString() => $"{Year}年 {Month}月";
+         
 
     }
 }
