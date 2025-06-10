@@ -5,17 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Exercise01 {
-    public class YearMonth {
-
-        public int Year { get; init; }
-
-        public int Month { get; init; }
-
-        public YearMonth(int year,int month) {
-            Year = year;
-            Month = month;
-        }
-
+    public record YearMonth(int Year, int Month) {
+            
         public bool Is21Century => 2001 <= Year && Year <= 2100;
 
         public YearMonth AddOneMonth() {
