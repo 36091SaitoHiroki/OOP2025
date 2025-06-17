@@ -9,6 +9,25 @@
             abbrs.Add("IOC", "国際オリンピック委員会");
             abbrs.Add("NPT", "核兵器不拡散条約");
 
+
+            var count = abbrs.Count;
+            Console.WriteLine(abbrs.Count);
+            Console.WriteLine();
+
+            if (abbrs.Remove("NPT")) {
+                Console.WriteLine(abbrs.Count);
+            }
+
+            if (!abbrs.Remove("NPT")) {
+                Console.WriteLine("削除できません");
+            }
+            Console.WriteLine();
+
+            //8.2.4
+            var query = abbrs.GetAll().Where(x => x.Key.Length == 3);
+
+
+
             // Getメソッドの利用例
             var names = new[] { "WHO", "FIFA", "NPT", };
             foreach (var name in names) {
@@ -36,6 +55,8 @@
                 Console.WriteLine($"{key}={value}");
             }
             Console.WriteLine();
+
+
 
         }
     }
