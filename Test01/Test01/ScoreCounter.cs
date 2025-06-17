@@ -11,31 +11,29 @@
         //メソッドの概要： 
         private static IEnumerable<Student> ReadScore(string filePath) {
             var score = new List<Student>();
-            foreach (var s in score) {
-                Student student = new Student() {
-                    Name = Student[0],
-                    Subject ,
-                };
+            var lines = File.ReadAllLines(filePath);
+            
+            foreach (var line in lines) {
+                string[] s = line.Split(',');
                 
-                Sale sale = new Sale() {
-                    ShopName = items[0],
-                    ProductCategory = items[1],
-                    Amount = int.Parse(items[2]),
-                };
-                sales.Add(sale);
+                // Ssale = new Sale() {
+                //    ShopName = items[0],
+                //    ProductCategory = items[1],
+                //    Amount = int.Parse(items[2]),
+                //};
+                //sales.Add(sale);
             }
-
-
+            return score;
         }
 
         //メソッドの概要： 
         public IDictionary<string, int> GetPerStudentScore() {
             var dict = new Dictionary<string, int>();
             foreach (Student student in _score) {
-                if (dict.ContainsKey(student.))
-                    dict[sale.ShopName] += sale.Amount;
+                if (dict.ContainsKey(student.Subject))
+                    dict[student.Subject] += student.Score;
                 else
-                    dict[sale.ShopName] = sale.Amount;
+                    dict[student.Subject] = student.Score;
             }
             return dict;
         }
