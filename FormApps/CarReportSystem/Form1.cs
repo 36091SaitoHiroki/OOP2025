@@ -8,6 +8,8 @@ namespace CarReportSystem {
         //カーレポート管理用リスト
         BindingList<CarReport> listCarReports = new BindingList<CarReport>();
 
+        Settings settings = new Settings();
+
         public Form1() {
             InitializeComponent();
             dgvRecord.DataSource = listCarReports;
@@ -161,6 +163,9 @@ namespace CarReportSystem {
             //交互に色を設定（データグリッドビュー）
             dgvRecord.DefaultCellStyle.BackColor = Color.LightBlue;
             dgvRecord.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+
+            //
+
         }
 
         private void tsmiExit_Click(object sender, EventArgs e) {
@@ -177,12 +182,16 @@ namespace CarReportSystem {
 
             if (cdColor.ShowDialog() == DialogResult.OK) {
                 BackColor = cdColor.Color;
+                //設定ファイルへ保存
+                settings.MainFormBackColor = cdColor.Color.ToArgb();
+
+
             }
         }
 
         //ファイルオープン処理
         private void reportOpenFile() {
-            if(ofdReportFileOpen.ShowDialog() == DialogResult.OK) {
+            if (ofdReportFileOpen.ShowDialog() == DialogResult.OK) {
                 try {
 #pragma warning disable SYSLIB0011 // 型またはメンバーが旧型式です
                     var bf = new BinaryFormatter();
@@ -205,7 +214,7 @@ namespace CarReportSystem {
                 }
                 catch (Exception) {
                     tsslbMessage.Text = "ファイル形式が違います";
-                    
+
                 }
             }
         }
@@ -241,6 +250,12 @@ namespace CarReportSystem {
 
         private void hirakuToolStripMenuItem_Click(object sender, EventArgs e) {
             reportOpenFile();
+        }
+
+        //フォームが閉じたら呼ばれる
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
+            //設定ファイルへ色情報を保存する処理
+            
         }
     }
 }

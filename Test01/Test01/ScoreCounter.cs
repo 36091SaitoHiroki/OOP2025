@@ -8,39 +8,37 @@
 
         }
 
-        //メソッドの概要： 
-        private static IEnumerable<Student> ReadScore(string filePath) {
-            var score = new List<Student>();
+         
+        public static IEnumerable<Student> ReadScore(string filePath) {
+            
+            var Scores = new List<Student>();
+            
             var lines = File.ReadAllLines(filePath);
             
             foreach (var line in lines) {
-                string[] s = line.Split(',');
+                string[] items = line.Split(',');
                 
-                // Ssale = new Sale() {
-                //    ShopName = items[0],
-                //    ProductCategory = items[1],
-                //    Amount = int.Parse(items[2]),
-                //};
-                //sales.Add(sale);
+                Student student = new Student() {
+                    Name = items[0],
+                    Subject = items[1],
+                    Score = int.Parse(items[2]),
+                };
+                Scores.Add(student);
             }
-            return score;
+            return Scores;
         }
 
         //メソッドの概要： 
-        public IDictionary<string, int> GetPerStudentScore() {
-            var dict = new Dictionary<string, int>();
+        public IDictionary<string?, int> GetPerStudentScore() {
+            var dict = new Dictionary<string?, int>();
             foreach (Student student in _score) {
-                if (dict.ContainsKey(student.Subject))
-                    dict[student.Subject] += student.Score;
+                if (dict.ContainsKey(student.Name))
+
+                    dict[student.Name] += student.Score;
                 else
-                    dict[student.Subject] = student.Score;
+                    dict[student.Name] = student.Score;
             }
             return dict;
         }
-
-
-
-
     }
-   
 }
