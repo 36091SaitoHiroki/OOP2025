@@ -1,6 +1,8 @@
 using System.ComponentModel;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 using static CarReportSystem.CarReport;
 
 namespace CarReportSystem {
@@ -164,8 +166,24 @@ namespace CarReportSystem {
             dgvRecord.DefaultCellStyle.BackColor = Color.LightBlue;
             dgvRecord.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
 
-            //
-
+            if (File.Exists("setting.xml")){ 
+                try {
+                    using (var reader = XmlReader.Create("setting.xml")) {
+                        var serializer = new XmlSerializer(typeof(Settings));
+                        settings = serializer.Deserialize(reader) as Settings;
+                        //背景色設定
+                        BackColor = Color.FromArgb(settings.MainFormBackColor);
+                        //設定クラスのインスタンスにも現在の色を設定
+                        //settings.MainFormBackColor = BackColor.ToArgb();
+                    }
+                }
+                catch (Exception ex) {
+                    tsslbMessage.Text = "設定ファイル書き出しエラー";
+                    MessageBox.Show(ex.Message); //具体的なエラー
+                }
+            } else {
+                tsslbMessage.Text = "設定ファイルがありません";
+            }
         }
 
         private void tsmiExit_Click(object sender, EventArgs e) {
@@ -184,8 +202,6 @@ namespace CarReportSystem {
                 BackColor = cdColor.Color;
                 //設定ファイルへ保存
                 settings.MainFormBackColor = cdColor.Color.ToArgb();
-
-
             }
         }
 
@@ -214,14 +230,9 @@ namespace CarReportSystem {
                 }
                 catch (Exception) {
                     tsslbMessage.Text = "ファイル形式が違います";
-
                 }
             }
         }
-
-
-
-
 
         //ファイルセーブ処理
         private void reportSaveFile() {
@@ -255,7 +266,16 @@ namespace CarReportSystem {
         //フォームが閉じたら呼ばれる
         private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
             //設定ファイルへ色情報を保存する処理
-            
+            try {
+                using (var writer = XmlWriter.Create("setting.xml")) {
+                    var serializer = new XmlSerializer(settings.GetType());
+                    serializer.Serialize(writer, settings);
+                }
+            }
+               catch (Exception ex) {
+                tsslbMessage.Text = "設定ファイル書き出しエラー";
+                MessageBox.Show(ex.Message); //具体的なエラー
+            }
         }
     }
 }
