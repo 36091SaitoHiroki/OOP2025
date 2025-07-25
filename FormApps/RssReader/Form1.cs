@@ -29,6 +29,7 @@ namespace RssReader {
 
         private void Form1_Load(object sender, EventArgs e) {
             cbUrl.DataSource = rssUrlDict.Select(x => x.Key).ToList();
+            cbUrl.SelectedIndex = -1;
         }
 
         private async void btRssGet_Click(object sender, EventArgs e) {
@@ -82,7 +83,5 @@ namespace RssReader {
             tbGoBack.Enabled = wvRssLink.CanGoBack;
             tbGoForward.Enabled = wvRssLink.CanGoForward;
         }
-
-
     }
 }
