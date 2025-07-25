@@ -1,20 +1,41 @@
 using System.Net;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static System.Net.WebRequestMethods;
 
 namespace RssReader {
     public partial class Form1 : Form {
 
         private List<ItemData> items;
 
+        Dictionary<string, string> rssUrlDict = new Dictionary<string, string>() {
+            {"主要","https://news.yahoo.co.jp/rss/topics/top-picks.xml"},
+            {"国内","https://news.yahoo.co.jp/rss/categories/domestic.xml"},
+            {"経済","https://news.yahoo.co.jp/rss/categories/business.xml"},
+            {"エンタメ","https://news.yahoo.co.jp/rss/categories/entertainment.xml"},
+            {"スポーツ","https://news.yahoo.co.jp/rss/categories/sports.xml"},
+            {"IT","https://news.yahoo.co.jp/rss/categories/it.xml"},
+            {"科学","https://news.yahoo.co.jp/rss/categories/science.xml"},
+            {"ライフ","https://news.yahoo.co.jp/rss/categories/life.xml"},
+            {"地域","https://news.yahoo.co.jp/rss/categories/local.xml"},
+
+
+        };
+
         public Form1() {
             InitializeComponent();
+            GoForwardBtEnableSet();
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            cbUrl.DataSource = rssUrlDict.Select(x => x.Key).ToList();
         }
 
         private async void btRssGet_Click(object sender, EventArgs e) {
+
             using (var hc = new HttpClient()) {
 
-                string xml = await hc.GetStringAsync(tbUrl.Text);
+                string xml = await hc.GetStringAsync(getRssUrl(cbUrl.Text));
                 XDocument xdoc = XDocument.Parse(xml);
                 //XDocument xdoc = XDocument.Parse(await hc.GetStringAsync(tbUrl.Text));
 
@@ -32,16 +53,25 @@ namespace RssReader {
             }
         }
 
+        private string getRssUrl(string str) {
+            if (rssUrlDict.ContainsKey(str)) {
+                return rssUrlDict[str];
+            }
+            return str;
+        }
+
         private void lbTitles_Click(object sender, EventArgs e) {
             wvRssLink.Source = new Uri(items[lbTitles.SelectedIndex].Link);
         }
 
-        private void GoBack_Click(object sender, EventArgs e) {
+        private void tbGoBack_Click(object sender, EventArgs e) {
             wvRssLink.GoBack();
+            GoForwardBtEnableSet();
         }
 
-        private void GoForward_Click(object sender, EventArgs e) {
+        private void tbGoForward_Click(object sender, EventArgs e) {
             wvRssLink.GoForward();
+            GoForwardBtEnableSet();
         }
 
         private void wvRssLink_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e) {
@@ -49,8 +79,8 @@ namespace RssReader {
         }
 
         private void GoForwardBtEnableSet() {
-            GoBack.Enabled = wvRssLink.CanGoBack;
-            GoForward.Enabled = wvRssLink.CanGoForward;
+            tbGoBack.Enabled = wvRssLink.CanGoBack;
+            tbGoForward.Enabled = wvRssLink.CanGoForward;
         }
 
 
