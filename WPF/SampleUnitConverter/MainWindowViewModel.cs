@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,20 +22,16 @@ namespace SampleUnitConverter{
         public ImperialUnit CurrentImperialUnit { get; set; }
 
         //プロパティ
-        public double MetricValue { 
-            get => metricValue; 
-            set {
-                this.metricValue = value;
-                this.OnPropertyChanged();
-            }
+        public double MetricValue {
+            get => metricValue;
+            set => SettingsProperty(ref metricValue,value);
+
         }
 
-        public double ImperiaValue { 
-            get => imperiaValue; 
-            set {
-                this.imperiaValue = value;
-                this.OnPropertyChanged();
-            }
+        public double ImperiaValue {
+            get => imperiaValue;
+            set => SettingsProperty(ref imperiaValue, value);
+        
         }
 
         public MainWindowViewModel() {
