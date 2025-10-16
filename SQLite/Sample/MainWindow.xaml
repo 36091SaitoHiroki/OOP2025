@@ -8,7 +8,7 @@
         Title="MainWindow" Width="300">
     <Grid>
         <StackPanel Margin="10">
-            <TextBox x:Name="NameTextBox"/>
+            <TextBox x:Name="NameTextBox"/>        
             <TextBox x:Name="PhoneTextBox"/>
             <Button Content="更新" x:Name="UpdateButton" Click="UpdateButton_Click"/>
             <Button Content="保存" x:Name="SaveButton" Click="SaveButton_Click"/>
@@ -21,7 +21,7 @@
                         <StackPanel>
                             <TextBlock Text="{Binding Id}"/>
                             <TextBlock Text="{Binding Name}" FontSize="20"/>
-                            <TextBlock Text="{Binding Phone}" Foreground="Blue"/>
+                            <TextBlock Text="{Binding Phone}" Foreground= "Blue"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
