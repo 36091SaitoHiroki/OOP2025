@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomerApp" SizeToContent="Height"
         mc:Ignorable="d"
-        Title="顧客管理アプリケーション" Width="300">
+        Title="顧客管理アプリケーション" Width="350">
     <Grid>
+        
         <StackPanel Margin="10">
 
+            <TextBlock Text="名前" />
             <TextBox x:Name="NameTextBox" />
+            <TextBlock Text="電話番号" />
             <TextBox x:Name="PhoneTextBox" />
-            <TextBox x:Name="AddressTextBox" />
-            <Button Content="更新" x:Name="UpdateButton"  Click="UpdateButton_Click"/>
-            <Button Content="保存" x:Name="SaveButton" Click="SaveButton_Click"/>
-            <Button Content="取得" x:Name="ReadButton" Click="ReadButton_Click"/>
-            <Button Content="削除" x:Name="DeleteButton" Click="DeleteButton_Click"/>
+            <TextBlock Text="住所" />
+            <TextBox x:Name="AddressTextBox" Margin="0,0,0,10"/>
+            <Button Content="更新" x:Name="UpdateButton" Click="UpdateButton_Click" Margin="0,0,0,5"/>
+            <Button Content="保存" x:Name="SaveButton" Click="SaveButton_Click" Margin="0,0,0,5"/>
+            <Button Content="取得" x:Name="ReadButton" Click="ReadButton_Click" Margin="0,0,0,5"/>
+            <Button Content="削除" x:Name="DeleteButton" Click="DeleteButton_Click" />
             <TextBox x:Name="SearchTextBox" Margin="0,5,0,0" FontSize="20" TextChanged="SearchTextBox_TextChanged"/>
             <ListView x:Name="CustomerListView" Margin="0,5,0,0" Height="600" SelectionChanged="CustomerListView_SelectionChanged">
                 <ListView.ItemTemplate>
@@ -24,7 +28,7 @@
                             <TextBlock Text="{Binding Id}"/>
                             <TextBlock Text="{Binding Name}" FontSize="20"/>
                             <TextBlock Text="{Binding Phone}" Foreground= "Blue"/>
-                            <TextBlock Text="{Binding Address}" FontSize="20"/>
+                            <TextBlock Text="{Binding Address}" Foreground="Black"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
