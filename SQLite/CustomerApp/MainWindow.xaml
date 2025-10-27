@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="顧客管理アプリケーション" Width="350">
     <Grid>
-        
-        <StackPanel Margin="10">
+
+        <StackPanel Margin="10" >
 
             <TextBlock Text="名前" />
             <TextBox x:Name="NameTextBox" />
