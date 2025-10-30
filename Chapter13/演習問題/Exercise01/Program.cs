@@ -120,7 +120,6 @@ namespace Exercise01 {
 
             foreach (var name in categoryName) {
                 Console.WriteLine(name);
-                
             }
         }
     }
