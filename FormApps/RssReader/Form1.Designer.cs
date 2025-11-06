@@ -76,7 +76,7 @@
             wvRssLink.TabIndex = 3;
             wvRssLink.ZoomFactor = 1D;
             wvRssLink.SourceChanged += wvRssLink_SourceChanged;
-            wvRssLink.Click += wvRssLink_Click;
+
             // 
             // tbGoBack
             // 
