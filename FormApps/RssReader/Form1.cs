@@ -107,9 +107,5 @@ namespace RssReader {
             //•¶Žš‚ð•`‰æ
             e.Graphics.DrawString(txt, fnt, bsh, bnd);
         }
-
-        private void wvRssLink_Click(object sender, EventArgs e) {
-
-        }
     }
 }
