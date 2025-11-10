@@ -13,7 +13,12 @@
                 }
             }
 
-
+            //コード10.2  テキストファイルを一気に読み込む
+            var filePath = "./Greeting.txt";
+            var lines = File.ReadAllLines(filePath);
+            foreach (var line in lines) {
+                Console.WriteLine(line);
+            }
         }
     }
 }
