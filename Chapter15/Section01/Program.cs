@@ -29,6 +29,4 @@
         public string GetMessage() => "こんばんは";
 
     }
-
-
 }
