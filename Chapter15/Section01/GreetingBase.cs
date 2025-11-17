@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Section01 {
     interface IGreeting {
-         string GetMessage();
-
+        string GetMessage();
     }
 }
