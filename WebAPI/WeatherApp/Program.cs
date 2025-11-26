@@ -81,7 +81,7 @@ namespace WeatherApp {
         }
 
         static async Task GetWeatherInfo(HttpClient http, double latitude, double longitude, string locationName) {
-            
+
             string weatherUrl = $"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&hourly=temperature_2m&current=temperature_2m,relative_humidity_2m,wind_speed_10m";
 
             // Open-Meteo API から天気情報を取得
