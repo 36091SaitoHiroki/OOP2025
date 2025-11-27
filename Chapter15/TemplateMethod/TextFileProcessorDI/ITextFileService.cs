@@ -11,3 +11,4 @@ namespace TextFileProcessorDI {
         void Terminate();
     }
 }
+
