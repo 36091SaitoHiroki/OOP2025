@@ -25,3 +25,4 @@ namespace TextFileProcessor {
         protected virtual void Terminate() { }
     }
 }
+
