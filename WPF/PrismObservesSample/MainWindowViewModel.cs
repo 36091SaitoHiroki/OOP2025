@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace PrismObservesSample {
-    class MainWindowViewModel : BindingBase {
+    class MainWindowViewModel : BindableBase {
         private string _input1 = "";
         public string Input1 {
             get => _input1;
@@ -36,7 +36,7 @@ namespace PrismObservesSample {
 
         //足し算の処理
         private void ExcuteSum() {
-            Result = int.Parse(Input1) + int.Parse(Input2).ToString();
+            Result = (int.Parse(Input1) + int.Parse(Input2)).ToString();
 
         }
 
